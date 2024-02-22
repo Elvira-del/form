@@ -1,6 +1,26 @@
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 19, 1, 66;
+  --russian-violet-color: 257, 97%, 13%;
+  --risd-blue-color: 227, 95%, 57%;
+  --shocking-pink-color: 320, 95%, 57%;
+  --black-color: 0, 0%, 4%;
+  --white-color: 0, 0%, 100%;
+
+  --foreground: hsl(var(--white-color));
+  --background: hsl(var(--russian-violet-color));
+  --primary-button-background: linear-gradient(
+    90deg,
+    hsl(var(--shocking-pink-color)) 0%,
+    hsl(var(--risd-blue-color)) 100%
+  );
+  --form-background: linear-gradient(
+    160deg,
+    hsla(var(--white-color), 0.25),
+    hsla(227, 95%, 82%, 0.2) 40%,
+    hsla(227, 95%, 71%, 0.2) 80%,
+    hsla(227, 95%, 65%, 0.2) 100%
+  );
+
+  --font-family: "Inter", sans-serif;
 }
 
 * {
@@ -16,8 +36,8 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  color: var(--foreground);
+  background: var(--background);
 }
 
 a {
