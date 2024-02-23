@@ -1,4 +1,6 @@
 import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from "react";
+import classNames from "classnames/bind";
+import { Icon } from "./icon/Icon";
 import styles from "./button.module.css";
 
 type ButtonType = {
@@ -15,9 +17,17 @@ export const Button = ({
   children,
   ...rest
 }: ButtonType) => {
+  const btnClass = classNames.bind(styles);
+
   return (
-    <button type={btnType} onClick={handleClick} {...rest}>
-      {children}
+    <button
+      className={btnClass("button", [btnAction])}
+      type={btnType}
+      onClick={handleClick}
+      {...rest}
+    >
+      {btnAction === "social" && <Icon id={"google"} />}
+      <span>{children}</span>
     </button>
   );
 };

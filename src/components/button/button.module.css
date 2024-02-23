@@ -1,1 +1,27 @@
+.button {
+  padding: 1rem 2rem;
+  width: clamp(260px, 428px, 100%);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+}
 
+.primary {
+  background: var(--primary-button-background);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+}
+
+.secondary {
+  background: hsl(var(--russian-violet-color));
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  padding-block: calc(1rem - 2px);
+  background: hsl(var(--white-color));
+  color: hsl(var(--black-color));
+}
