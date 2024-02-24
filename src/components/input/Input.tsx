@@ -3,6 +3,7 @@ import {
   HTMLInputTypeAttribute,
   InputHTMLAttributes,
 } from "react";
+import classNames from "classnames/bind";
 import styles from "./input.module.css";
 
 type InputType = {
@@ -19,8 +20,11 @@ export const Input = ({
   handleChange,
   ...rest
 }: InputType) => {
+  const inputClass = classNames.bind(styles);
+
   return (
     <input
+      className={inputClass("input", `input-${[inputName]}`)}
       type={inputType}
       name={inputName}
       placeholder={inputText}

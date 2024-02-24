@@ -24,6 +24,8 @@
   --font-family: "Inter", sans-serif;
 
   --social-icon-sizes: 1.5rem;
+  --item-padding: 1rem 2rem;
+  --item-border-radius: 50px;
 }
 
 *,
@@ -50,7 +52,6 @@ body {
 }
 
 button {
-  border: none;
   background: transparent;
   outline: none;
   color: inherit;
@@ -58,7 +59,9 @@ button {
 
 button,
 input {
+  border: none;
   font-family: inherit;
+  font-size: 1rem;
 }
 
 button,

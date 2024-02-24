@@ -1,0 +1,4 @@
+.input {
+  padding: var(--item-padding);
+  border-radius: var(--item-border-radius);
+}

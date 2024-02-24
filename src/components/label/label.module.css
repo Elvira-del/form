@@ -1,0 +1,10 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: clamp(260px, 428px, 100%);
+}
+
+.text {
+  padding-left: 2rem;
+}
