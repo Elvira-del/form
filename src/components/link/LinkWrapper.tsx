@@ -9,5 +9,9 @@ type LinkType = {
 };
 
 export const LinkWrapper = ({ reference, children }: LinkType) => {
-  return <Link href={reference}>{children}</Link>;
+  return (
+    <Link className={styles.link} href={reference}>
+      {children}
+    </Link>
+  );
 };
