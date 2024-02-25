@@ -20,6 +20,7 @@
     hsla(227, 95%, 71%, 0.2) 80%,
     hsla(227, 95%, 65%, 0.2) 100%
   );
+  --link-color: hsl(var(--shocking-pink-color));
 
   --font-family: "Inter", sans-serif;
 
@@ -49,6 +50,14 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin-inline: auto;
+  padding-inline: 15px;
 }
 
 button {
