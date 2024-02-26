@@ -9,7 +9,7 @@ import styles from "./input.module.css";
 type InputType = {
   inputType: HTMLInputTypeAttribute;
   inputName: string;
-  inputText: string;
+  inputText?: string;
   handleChange: ChangeEventHandler;
 } & InputHTMLAttributes<HTMLInputElement>;
 

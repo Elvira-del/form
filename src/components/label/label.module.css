@@ -2,9 +2,20 @@
   display: flex;
   flex-direction: column;
   row-gap: 15px;
-  width: clamp(260px, 428px, 100%);
+  width: 100%;
 }
 
 .text {
   padding-left: 2rem;
+}
+
+.checkbox {
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+
+.checkbox-text {
+  padding-right: 5px;
+  padding-left: 0;
 }
