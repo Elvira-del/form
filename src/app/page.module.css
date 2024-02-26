@@ -1,0 +1,17 @@
+.subtitle {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+}

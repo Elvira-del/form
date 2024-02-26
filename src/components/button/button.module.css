@@ -1,6 +1,6 @@
 .button {
   padding: var(--item-padding);
-  width: clamp(260px, 428px, 100%);
+  width: 100%;
   border-radius: var(--item-border-radius);
   font-weight: 500;
 }
