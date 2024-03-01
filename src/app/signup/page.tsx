@@ -1,52 +1,54 @@
-"use client";
-
 import { Button } from "@/components/button/Button";
+import { Form } from "@/components/form/Form";
 import { Input } from "@/components/input/Input";
 import { Label } from "@/components/label/Label";
 import { LinkWrapper } from "@/components/link/LinkWrapper";
-import { Form } from "@/components/form/Form";
 import styles from "./page.module.css";
 
 export default function Page() {
   return (
     <Form>
-      <h1>Sign In</h1>
-      <p className={styles.subtitle}>
-        We missed you! Please enter your details.
-      </p>
+      <h1>Sign Up</h1>
+      <p className={styles.subtitle}>Create an account to continue.</p>
+      <Label labelText={"Username"}>
+        <Input
+          inputType={"text"}
+          inputName={"username"}
+          inputText={"Enter username"}
+        />
+      </Label>
       <Label labelText={"Email"}>
         <Input
           inputType={"email"}
           inputName={"email"}
-          inputText={"Enter your email"}
+          inputText={"johndoe@example.com"}
         />
       </Label>
       <Label labelText={"Password"}>
         <Input
           inputType={"password"}
           inputName={"password"}
-          inputText={"Enter your password"}
+          inputText={"Enter password"}
         />
-      </Label>
-
-      <Label labelText={"show password"} checkboxType={true}>
-        <Input inputType={"checkbox"} inputName={"checkbox"} />
       </Label>
 
       <div className={styles.buttons}>
         <Button btnType={"button"} btnAction={"primary"}>
-          Sign in
+          Sign up
         </Button>
         <Button btnType={"button"} btnAction={"social"}>
-          Sign in with Google
+          Sign up with Google
         </Button>
       </div>
 
       <div className={styles.links}>
-        <LinkWrapper reference={"/password"}>Forgot password?</LinkWrapper>
         <span>
-          Don’t have an account?{" "}
-          <LinkWrapper reference={"/signup"}>Sign up</LinkWrapper>
+          I agree to the processing of{" "}
+          <LinkWrapper reference={"/"}>Personal data</LinkWrapper>
+        </span>
+        <span>
+          Already have an account?{" "}
+          <LinkWrapper reference={"/"}>Sign in</LinkWrapper>
         </span>
       </div>
     </Form>
