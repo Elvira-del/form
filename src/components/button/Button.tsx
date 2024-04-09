@@ -2,6 +2,7 @@ import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from "react";
 import classNames from "classnames/bind";
 import { Icon } from "./icon/Icon";
 import styles from "./button.module.css";
+import { useFormStatus } from "react-dom";
 
 type ButtonType = {
   btnType: "button" | "submit" | "reset";
@@ -17,6 +18,7 @@ export const Button = ({
   children,
   ...rest
 }: ButtonType) => {
+  const { pending } = useFormStatus();
   const btnClass = classNames.bind(styles);
 
   return (
@@ -24,6 +26,8 @@ export const Button = ({
       className={btnClass("button", [btnAction])}
       type={btnType}
       onClick={handleClick}
+      disabled={btnType === "submit" && pending}
+      aria-disabled={btnType === "submit" && pending}
       {...rest}
     >
       {btnAction === "social" && <Icon id={"google"} />}
