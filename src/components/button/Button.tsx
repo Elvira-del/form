@@ -1,3 +1,5 @@
+"use client";
+
 import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from "react";
 import classNames from "classnames/bind";
 import { Icon } from "./icon/Icon";
@@ -7,7 +9,7 @@ import { useFormStatus } from "react-dom";
 type ButtonType = {
   btnType: "button" | "submit" | "reset";
   btnAction: "primary" | "secondary" | "social";
-  handleClick: MouseEventHandler;
+  handleClick?: MouseEventHandler;
   children: ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
