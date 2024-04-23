@@ -10,7 +10,7 @@ type InputType = {
   inputType: HTMLInputTypeAttribute;
   inputName: string;
   inputText?: string;
-  handleChange: ChangeEventHandler;
+  handleChange?: ChangeEventHandler;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = ({
