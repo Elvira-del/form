@@ -7,12 +7,7 @@
 
   --foreground: hsl(var(--white-color));
   --background: hsl(var(--russian-violet-color));
-  --primary-button-background: linear-gradient(
-    90deg,
-    hsl(var(--russian-violet-color)),
-    hsl(var(--risd-blue-color)),
-    hsl(var(--shocking-pink-color))
-  );
+  --primary-button-background: hsl(var(--risd-blue-color));
   --form-background: linear-gradient(
     160deg,
     hsla(var(--white-color), 0.25),
@@ -48,12 +43,22 @@ body {
 }
 
 body {
+  /* color: var(--foreground);
+  background: var(--background); */
+
+  background-color: var(--background);
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(227, 95%, 37%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 55%);
   color: var(--foreground);
-  background: var(--background);
 }
 
 main {
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   margin-inline: auto;

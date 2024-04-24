@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@/components/button/Button";
-import { Input } from "@/components/input/Input";
-import { Label } from "@/components/label/Label";
-import { LinkWrapper } from "@/components/link/LinkWrapper";
-import { Form } from "@/components/form/Form";
-import styles from "./page.module.css";
+import { Form } from "./components/form/Form";
+import { Button } from "./components/button/Button";
+import { Input } from "./components/input/Input";
+import { Label } from "./components/label/Label";
+import { LinkWrapper } from "./components/link/LinkWrapper";
 import { useFormState } from "react-dom";
 import { authenticate } from "./lib/actions";
+import styles from "./page.module.css";
 
 export default function Page() {
   const [data, dispatch] = useFormState(authenticate, undefined);

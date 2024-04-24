@@ -4,12 +4,13 @@
   flex-wrap: wrap;
   place-items: center;
   row-gap: 25px;
-  margin-inline: auto;
+  /* margin-inline: auto; */
   padding: 15px;
   width: clamp(290px, 100%, 530px);
   border: 1px solid hsla(var(--white-color), 0.18);
   border-radius: 40px;
-  background: var(--form-background);
+  /* background: var(--form-background); */
+  background-color: hsla(var(--white-color), 0.1);
   box-shadow: 0 8px 32px 0 hsla(var(--risd-blue-color), 0.37);
   backdrop-filter: blur(20px);
 }
