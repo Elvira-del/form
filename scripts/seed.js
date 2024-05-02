@@ -2,11 +2,12 @@ import { sql } from "@vercel/postgres";
 
 async function createUsersTable(client) {
   try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     const users = await client.sql`CREATE TABLE IF NOT EXISTS users (
-        user_id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-        user_name varchar(255) NOT NULL,
-        user_email TEXT NOT NULL UNIQUE,
-        user_password TEXT NOT NULL
+        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        username varchar(255) NOT NULL,
+        email TEXT NOT NULL UNIQUE,
+        password TEXT NOT NULL
       )`;
     console.log('Created "users" table');
     return users;
