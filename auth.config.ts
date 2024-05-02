@@ -2,7 +2,8 @@ import type { NextAuthConfig } from "next-auth";
 
 export const authConfig = {
   pages: {
-    signIn: "/signin",
+    // signIn: "/signin",
+    signIn: "/",
     newUser: "/signup",
   },
   callbacks: {
@@ -11,7 +12,7 @@ export const authConfig = {
       const user = auth?.user;
 
       if (url.pathname.startsWith("/account")) {
-        if (user) return true;
+        if (!!user) return true;
         return false;
       } else if (!!user) {
         return Response.redirect(new URL("/account", url));

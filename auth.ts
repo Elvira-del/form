@@ -32,10 +32,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           }
 
           const checkedPassword = await bcrypt.compare(password, user.password);
-          console.log("checkedPassword:", checkedPassword);
 
           if (checkedPassword) {
-            console.log("User", user);
             return user;
           }
         }
