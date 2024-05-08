@@ -1,4 +1,5 @@
 :root {
+  --red-color: 0, 84%, 60%;
   --russian-violet-color: 257, 97%, 13%;
   --risd-blue-color: 227, 95%, 57%;
   --shocking-pink-color: 320, 95%, 57%;
@@ -16,6 +17,7 @@
     hsla(227, 95%, 65%, 0.2) 100%
   );
   --link-color: hsl(var(--shocking-pink-color));
+  --error-color: hsl(var(--red-color));
 
   --font-family: "Inter", sans-serif;
 
@@ -86,4 +88,12 @@ label {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.error {
+  padding-left: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: var(--error-color);
 }

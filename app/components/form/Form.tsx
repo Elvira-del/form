@@ -2,7 +2,7 @@ import { FormHTMLAttributes, ReactNode } from "react";
 import styles from "./form.module.css";
 
 type FormType = {
-  formAction?: string | ((formData: FormData) => void) | undefined;
+  formAction: string | ((formData: FormData) => void) | undefined;
   children: ReactNode;
 } & FormHTMLAttributes<HTMLFormElement>;
 
