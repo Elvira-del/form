@@ -15,11 +15,33 @@ const FormSchema = object({
     .max(15),
 }).required();
 
+const SignInSchema = FormSchema.omit({ username: true });
+
+type FormState = {
+  errors?: {
+    username?: string[];
+    email?: string[];
+    password?: string[];
+  };
+  message?: string;
+};
+
 export async function authenticateLogin(
-  prevState: string | undefined,
+  prevState: FormState | string | undefined,
   formData: FormData,
 ) {
   try {
+    const parsedFormData = SignInSchema.safeParse({
+      email: formData.get("email"),
+      password: formData.get("password"),
+    });
+
+    if (!parsedFormData.success) {
+      return {
+        errors: parsedFormData.error.flatten().fieldErrors,
+      };
+    }
+
     await signIn("credentials", formData);
   } catch (error) {
     if (error instanceof AuthError) {
@@ -30,19 +52,11 @@ export async function authenticateLogin(
           return "Something went wrong.";
       }
     }
+
     console.log(error);
     throw error;
   }
 }
-
-type FormState = {
-  errors?: {
-    username?: string[];
-    email?: string[];
-    password?: string[];
-  };
-  message?: string;
-};
 
 export async function authenticateRegister(
   prevState: FormState,

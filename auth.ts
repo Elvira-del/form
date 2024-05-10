@@ -5,19 +5,19 @@ import { getUser } from "./app/lib/db";
 import bcrypt from "bcrypt";
 import { object, string } from "zod";
 
+const CredentialsSchema = object({
+  email: string({ required_error: "Email is required." }).email(),
+  password: string({
+    required_error: "Password is required.",
+  }).min(5),
+}).required();
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
     Credentials({
       async authorize(credentials) {
-        const parsedCredentials = object({
-          email: string({ required_error: "Email is required." }).email({
-            message: "Invalid email address.",
-          }),
-          password: string({
-            required_error: "Password is required.",
-          }).min(5, { message: "Must be 5 or more characters long." }),
-        }).safeParse(credentials);
+        const parsedCredentials = CredentialsSchema.safeParse(credentials);
 
         if (!parsedCredentials.success) {
           console.log(parsedCredentials.error.flatten());

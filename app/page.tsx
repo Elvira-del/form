@@ -6,11 +6,15 @@ import { Input } from "./components/input/Input";
 import { Label } from "./components/label/Label";
 import { LinkWrapper } from "./components/link/LinkWrapper";
 import { useFormState } from "react-dom";
-import { authenticate } from "./lib/actions";
+import { authenticateLogin } from "./lib/actions";
 import styles from "./page.module.css";
 
+const initialState = {
+  errors: {},
+};
+
 export default function Page() {
-  const [data, dispatch] = useFormState(authenticate, undefined);
+  const [data, dispatch] = useFormState(authenticateLogin, initialState);
 
   return (
     <main>
@@ -24,14 +28,34 @@ export default function Page() {
             inputType={"email"}
             inputName={"email"}
             inputText={"Enter your email"}
+            aria-describedby="email-error"
           />
+
+          <span id="email-error" aria-live="polite" aria-atomic="true">
+            {data.errors?.email &&
+              data.errors.email.map((error: string) => (
+                <span className="error" key={error}>
+                  {error}
+                </span>
+              ))}
+          </span>
         </Label>
         <Label labelText={"Password"}>
           <Input
             inputType={"password"}
             inputName={"password"}
             inputText={"Enter your password"}
+            aria-describedby="password-error"
           />
+
+          <span id="password-error" aria-live="polite" aria-atomic="true">
+            {data.errors?.password &&
+              data.errors.password.map((error: string) => (
+                <span className="error" key={error}>
+                  {error}
+                </span>
+              ))}
+          </span>
         </Label>
 
         <Label labelText={"show password"} checkboxType={true}>
