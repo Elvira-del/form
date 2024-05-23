@@ -26,6 +26,7 @@ export const Input = ({
     <input
       className={inputClass("input", `input-${[inputName]}`)}
       type={inputType}
+      inputMode={inputType === "email" ? "email" : "text"}
       name={inputName}
       placeholder={inputText}
       onChange={handleChange}
