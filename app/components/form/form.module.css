@@ -9,11 +9,11 @@
 .form {
   --background: linear-gradient(
     to bottom left,
-    hsla(var(--white-color), 0.1),
-    hsla(var(--white-color), 0.15),
-    hsla(var(--white-color), 0.25)
+    hsla(var(--white), 0.1),
+    hsla(var(--white), 0.15),
+    hsla(var(--white), 0.25)
   );
-  --shadow-color: hsla(var(--black-color), 0.25);
+  --shadow-color: hsla(var(--black), 0.25);
 
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
   row-gap: 25px;
   padding: 15px;
   width: 100%;
-  border: 1px solid hsla(var(--white-color), 0.2);
+  border: 1px solid hsla(var(--white), 0.2);
   border-radius: var(--item-border-radius);
   box-shadow: 0 0 10px 1px var(--shadow-color);
   background: var(--background);
@@ -46,8 +46,9 @@
   border-radius: 50%;
   background-image: linear-gradient(
     to bottom right,
-    hsl(var(--risd-blue-color)),
-    hsl(var(--shocking-pink-color))
+    hsl(var(--blue)),
+    hsl(var(--dark-purple)),
+    hsl(var(--pink))
   );
   z-index: -1;
 }

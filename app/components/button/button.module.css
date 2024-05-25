@@ -5,14 +5,55 @@
   font-weight: 500;
 }
 
+.button:focus-visible {
+  outline: 2px solid hsl(var(--white));
+  outline-offset: 3px;
+  transition: outline 0.1s ease;
+}
+
 .primary {
-  background: var(--primary-button-background);
-  background-size: 200% 100%;
-  background-position: 100% 0;
+  --background: linear-gradient(
+    to right,
+    hsl(var(--blue)),
+    hsl(var(--pink)),
+    hsl(var(--blue))
+  );
+
+  background: var(--background);
+  background-size: 400% 100%;
+  transition:
+    transform 0.5s linear,
+    box-shadow 0.5s linear;
+}
+
+@media (any-hover: hover) {
+  .primary:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s linear;
+    animation: hover 5s ease-out infinite;
+  }
+
+  @keyframes hover {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+}
+
+.primary:active {
+  transform: scale(0.98);
+  transition: transform 0.2s linear;
+  box-shadow: 0 0 15px 0 hsl(var(--dark-violet));
 }
 
 .secondary {
-  background: hsl(var(--russian-violet-color));
+  background: hsl(var(--dark-violet));
 }
 
 .social {
@@ -21,6 +62,6 @@
   align-items: center;
   column-gap: 5px;
   padding-block: calc(1rem - 2px);
-  background: hsl(var(--white-color));
-  color: hsl(var(--black-color));
+  background: hsl(var(--white));
+  color: hsl(var(--black));
 }

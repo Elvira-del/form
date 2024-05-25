@@ -1,22 +1,23 @@
 :root {
   --red-color: 0, 84%, 60%;
-  --russian-violet-color: 257, 97%, 13%;
-  --risd-blue-color: 227, 95%, 57%;
-  --shocking-pink-color: 320, 95%, 57%;
-  --black-color: 0, 0%, 4%;
-  --white-color: 0, 0%, 100%;
+  --dark-violet: 257, 97%, 13%;
+  --dark-purple: 287, 69%, 26%;
+  --blue: 227, 95%, 57%;
+  --pink: 320, 95%, 57%;
+  --black: 0, 0%, 4%;
+  --white: 0, 0%, 100%;
 
-  --foreground: hsl(var(--white-color));
-  --background: hsl(var(--russian-violet-color));
-  --primary-button-background: hsl(var(--risd-blue-color));
-  --link-color: hsl(var(--shocking-pink-color));
+  --foreground: hsl(var(--white));
+  --background: hsl(var(--dark-violet));
+
+  --link-color: hsl(var(--pink));
   --error-color: hsl(var(--red-color));
 
   --font-family: "Inter", sans-serif;
 
   --social-icon-sizes: 1.5rem;
   --item-padding: 1rem 2rem;
-  --item-border-radius: 50px;
+  --item-border-radius: 20px;
 }
 
 *,
@@ -27,8 +28,8 @@
   padding: 0;
 }
 
-*:focus-visible {
-  outline: none;
+*:focus {
+  outline-color: transparent;
 }
 
 html,
