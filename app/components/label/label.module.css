@@ -1,7 +1,7 @@
 .label {
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  gap: 10px;
   width: 100%;
 }
 
@@ -11,11 +11,12 @@
 
 .checkbox {
   flex-direction: row;
-  justify-content: end;
+  align-self: start;
   align-items: center;
+  width: auto;
 }
 
 .checkbox-text {
-  padding-right: 5px;
   padding-left: 0;
+  order: 1;
 }

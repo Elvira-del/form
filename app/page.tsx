@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
+import { useFormState } from "react-dom";
 import { Form } from "./components/form/Form";
 import { Button } from "./components/button/Button";
 import { Input } from "./components/input/Input";
 import { Label } from "./components/label/Label";
 import { LinkWrapper } from "./components/link/LinkWrapper";
-import { useFormState } from "react-dom";
+import { PasswordCheckbox } from "./components/checkbox/PasswordCheckbox";
 import { authenticateLogin } from "./lib/actions";
 import styles from "./page.module.css";
 
@@ -15,6 +17,11 @@ const initialState = {
 
 export default function Page() {
   const [data, dispatch] = useFormState(authenticateLogin, initialState);
+  const [isPasswordShow, setPasswordShow] = useState(false);
+
+  const togglePasswordVisibility = (isChecked: boolean) => {
+    setPasswordShow(isChecked);
+  };
 
   return (
     <main>
@@ -42,7 +49,7 @@ export default function Page() {
         </Label>
         <Label labelText={"Password"}>
           <Input
-            inputType={"password"}
+            inputType={isPasswordShow ? "text" : "password"}
             inputName={"password"}
             inputText={"Enter your password"}
             aria-describedby="password-error"
@@ -57,9 +64,8 @@ export default function Page() {
               ))}
           </span>
         </Label>
-
         <Label labelText={"show password"} checkboxType={true}>
-          <Input inputType={"checkbox"} inputName={"checkbox"} />
+          <PasswordCheckbox toggleCheckbox={togglePasswordVisibility} />
         </Label>
 
         <div className={styles.buttons}>
