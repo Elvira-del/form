@@ -14,7 +14,9 @@ export const authConfig = {
       if (url.pathname.startsWith("/account")) {
         if (!!user) return true;
         return false;
-      } else if (!!user) {
+      }
+
+      if (!!user) {
         return Response.redirect(new URL("/account", url));
       }
 

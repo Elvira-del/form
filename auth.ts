@@ -1,9 +1,10 @@
 import NextAuth from "next-auth";
 import { authConfig } from "./auth.config";
 import Credentials from "next-auth/providers/credentials";
-import { getUser } from "./app/lib/db";
-import bcrypt from "bcrypt";
+import GitHub from "next-auth/providers/github";
 import { object, string } from "zod";
+import bcrypt from "bcrypt";
+import { getUser } from "./app/lib/db";
 
 const CredentialsSchema = object({
   email: string({ required_error: "Email is required." }).email(),
@@ -15,6 +16,7 @@ const CredentialsSchema = object({
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
+    GitHub,
     Credentials({
       async authorize(credentials) {
         const parsedCredentials = CredentialsSchema.safeParse(credentials);
