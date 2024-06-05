@@ -3,6 +3,8 @@
   width: 100%;
   border-radius: var(--item-border-radius);
   font-weight: 500;
+  cursor: pointer;
+  user-select: none;
 }
 
 .button:focus-visible {
@@ -18,12 +20,23 @@
     hsl(var(--pink)),
     hsl(var(--blue))
   );
+  --background-disabled: linear-gradient(
+    to right,
+    hsla(var(--blue), 0.7),
+    hsla(var(--pink), 0.7),
+    hsla(var(--blue), 0.7)
+  );
 
   background: var(--background);
   background-size: 400% 100%;
   transition:
     transform 0.5s linear,
     box-shadow 0.5s linear;
+}
+
+.primary:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 @media (any-hover: hover) {
