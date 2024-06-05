@@ -39,9 +39,6 @@ body {
 }
 
 body {
-  /* color: var(--foreground);
-  background: var(--background); */
-
   background-color: var(--background);
   background-image: radial-gradient(
       at 47% 33%,
@@ -70,14 +67,14 @@ input {
   font-size: 1rem;
 }
 
-button,
 label {
   cursor: pointer;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  font-weight: 600;
+  color: var(--link-color);
 }
 
 .error {

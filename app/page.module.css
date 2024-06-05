@@ -1,17 +1,26 @@
-.subtitle {
+.formHeader {
   text-align: center;
 }
 
-.buttons {
+.title {
+  margin-bottom: 15px;
+}
+
+.divider {
   display: flex;
-  flex-direction: column;
-  row-gap: 15px;
+  align-items: center;
   width: 100%;
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 15px;
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  margin: 2px;
+  padding: 1px;
+  background-color: hsl(var(--white));
+}
+
+.formFooter {
+  text-align: center;
 }
