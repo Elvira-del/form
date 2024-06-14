@@ -22,7 +22,7 @@ export const CredentialsLoginForm = () => {
   };
 
   return (
-    <Form formAction={dispatch}>
+    <Form formAction={dispatch} aria-describedby="form-error">
       <Label labelText={"Email"}>
         <Input
           inputType={"email"}
@@ -32,7 +32,7 @@ export const CredentialsLoginForm = () => {
         />
 
         <span id="email-error" aria-live="polite" aria-atomic="true">
-          {data.errors?.email &&
+          {data?.errors?.email &&
             data.errors.email.map((error: string) => (
               <span className="error" key={error}>
                 {error}
@@ -49,7 +49,7 @@ export const CredentialsLoginForm = () => {
         />
 
         <span id="password-error" aria-live="polite" aria-atomic="true">
-          {data.errors?.password &&
+          {data?.errors?.password &&
             data.errors.password.map((error: string) => (
               <span className="error" key={error}>
                 {error}
@@ -60,6 +60,10 @@ export const CredentialsLoginForm = () => {
       <Label labelText={"show password"} checkboxType={true}>
         <PasswordCheckbox toggleCheckbox={togglePasswordVisibility} />
       </Label>
+
+      <div id="form-error" aria-live="polite" aria-atomic="true">
+        {data?.message && <p className="error">{data.message}</p>}
+      </div>
 
       <Button btnType={"submit"} btnAction={"primary"}>
         Sign in
