@@ -1,4 +1,18 @@
 .input {
   padding: var(--item-padding);
   border-radius: var(--item-border-radius);
+  transition: box-shadow 0.5s linear;
+}
+
+.input:focus-visible {
+  outline: 2px solid hsl(var(--white));
+  outline-offset: 3px;
+  transition: outline 0.1s ease;
+}
+
+@media (any-hover: hover) {
+  .input:hover {
+    box-shadow: 0 0 15px 0 hsl(var(--dark-violet));
+    transition: transform 0.2s linear;
+  }
 }
