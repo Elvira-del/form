@@ -1,8 +1,12 @@
-.subtitle {
+.formHeader {
   text-align: center;
 }
 
-.links {
+.title {
+  margin-bottom: 15px;
+}
+
+.formFooter {
   display: flex;
   flex-direction: column;
   align-items: center;

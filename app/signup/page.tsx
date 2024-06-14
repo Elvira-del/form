@@ -21,9 +21,12 @@ export default function Page() {
   return (
     <main>
       <Background>
+        <div className={styles.formHeader}>
+          <h1 className={styles.title}>Sign Up</h1>
+          <p>Create an account to continue.</p>
+        </div>
+
         <Form formAction={dispatch}>
-          <h1>Sign Up</h1>
-          <p className={styles.subtitle}>Create an account to continue.</p>
           <Label labelText={"Username"}>
             <Input
               inputType={"text"}
@@ -79,16 +82,16 @@ export default function Page() {
           <Button btnType={"submit"} btnAction={"primary"}>
             Sign up
           </Button>
-
-          <div className={styles.links}>
-            <span>
-              I agree to the processing of <Link href={"/"}>Personal data</Link>
-            </span>
-            <span>
-              Already have an account? <Link href={"/"}>Sign in</Link>
-            </span>
-          </div>
         </Form>
+
+        <div className={styles.formFooter}>
+          <span>
+            I agree to the processing of <Link href={"/"}>Personal data</Link>
+          </span>
+          <span>
+            Already have an account? <Link href={"/"}>Sign in</Link>
+          </span>
+        </div>
       </Background>
     </main>
   );
