@@ -86,9 +86,6 @@ export default function Page() {
 
         <div className={styles.formFooter}>
           <span>
-            I agree to the processing of <Link href={"/"}>Personal data</Link>
-          </span>
-          <span>
             Already have an account? <Link href={"/"}>Sign in</Link>
           </span>
         </div>

@@ -1,7 +1,10 @@
-.avatar {
-  width: 100px;
-  height: 100px;
-  border: 1px solid var(--black);
+.formHeader {
+  text-align: center;
+}
+
+.avatarWrapper {
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid hsl(var(--white));
   border-radius: 50%;
-  background-color: grey;
 }
